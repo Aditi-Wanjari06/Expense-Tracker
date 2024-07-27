@@ -20,6 +20,11 @@
     border-radius: 10px;
 }
 
+.auth-heading{
+    text-align: center;
+    font-size: 40px;
+}
+
 .btn-auth{
     background-color: black;
     color: white;
@@ -32,4 +37,10 @@
 .btn-auth:hover{
     transition: 0.3s;
     background-color: grey;
+}
+
+.auth-link{
+    text-align: center;
+    display: block;
+    margin-top: 10px;
 }

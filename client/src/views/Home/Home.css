@@ -1,0 +1,17 @@
+.home-heading{
+    font-size: 20px;
+    margin: 0;
+}
+
+.home-greeting{
+    font-size: 40px;
+    margin: 0;
+}
+
+.home-logout{
+   position: fixed;
+   top: 10px;
+   right: 10px;
+   cursor: pointer;
+   font-size: 17px;
+}

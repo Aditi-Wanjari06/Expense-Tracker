@@ -33,7 +33,7 @@ const postTransaction = async (req, res) => {
 }
 
 const getTransactions = async (req, res) => {
-    const  userId  = req.query.userId;
+    const userId = req.query.userId;
 
     const user = await User.findById(userId)
 
@@ -45,7 +45,7 @@ const getTransactions = async (req, res) => {
         })
     }
 
-    const transactions = await Transaction.find({user: userId}).sort({createdAt: -1});
+    const transactions = await Transaction.find({ user: userId }).sort({ createdAt: -1 });
 
     res.json({
         success: true,
@@ -55,6 +55,18 @@ const getTransactions = async (req, res) => {
 
 }
 
+const deleteTransaction = async (req, res) => {
+    const { id } = req.params;
+
+    await Transaction.deleteOne({ _id: id })
+
+    res.json({
+        success:true,
+        message: 'Transaction deleted succesfully',
+        data:null
+    })
+}
+
 export {
-    postTransaction, getTransactions
+    postTransaction, getTransactions,deleteTransaction
 }

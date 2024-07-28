@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 import { postLogin, postSignup } from "./controllers/user.js";
-import { getTransactions, postTransaction } from "./controllers/transaction.js";
+import { getTransactions, postTransaction ,deleteTransaction } from "./controllers/transaction.js";
 
 
 
@@ -34,6 +34,7 @@ app.post("/login", postLogin)
 
 app.post("/transaction", postTransaction)
 app.get("/transactions", getTransactions)
+app.delete("/transaction/:id",deleteTransaction)
 
 
 

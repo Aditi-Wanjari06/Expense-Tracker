@@ -4,6 +4,8 @@ import { useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import axios, { all } from 'axios'
 import TransactionCard from '../../components/TrnsactionCard/TransactionCard.js'
+import imgAdd from "./add.png"
+import { Link } from 'react-router-dom'
 
 function Home() {
 
@@ -121,7 +123,8 @@ function Home() {
               amount,
               category,
               type,
-              createdAt
+              createdAt,
+             
             } = transaction
 
             return (<TransactionCard
@@ -133,12 +136,15 @@ function Home() {
               type={type}
               createdAt={createdAt}
               loadTransactions={loadTransactions}
-
-
             />)
           })
         }
       </div>
+
+      <Link to='/add-transaction' >
+        <img src={imgAdd} alt='Add Transaction' className='add-transaction' />
+
+      </Link>
 
       <Toaster />
     </div>

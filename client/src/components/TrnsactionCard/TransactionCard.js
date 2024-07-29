@@ -16,34 +16,37 @@ function TransactionCard({ _id, title, amount, category, type, createdAt, loadTr
 
 
     return (
-        <div className='transaction-card'>
-            <h1 className='transaction-card-title'>{title}</h1>
+        <>
+        <h2 className='list-heading'>Expenses list : </h2>
+            <div className='transaction-card'>
+                <h1 className='transaction-card-title'>{title}</h1>
 
-            <span className='transaction-card-date'>
-                {new Date(createdAt).toLocaleString()}
-            </span>
-
-
-            <span className='transaction-card-category'>
-                {category}
-            </span>
+                <span className='transaction-card-date'>
+                    {new Date(createdAt).toLocaleString()}
+                </span>
 
 
-            <span className='transaction-card-amount' style={{
-                color: type === "credit" ? "green" : "red"
-            }}>
-                {type === "credit" ? "+" : "-"}
-                {amount}
-            </span>
-
-            <img src='https://cdn-icons-png.flaticon.com/128/6861/6861362.png' 
-            alt='delete-transaction'
-            onClick={deleteTransaction}
-            className='transaction-card-delete' />
+                <span className='transaction-card-category'>
+                    {category}
+                </span>
 
 
-            <Toaster />
-        </div>
+                <span className='transaction-card-amount' style={{
+                    color: type === "credit" ? "green" : "red"
+                }}>
+                    {type === "credit" ? "+" : "-"}
+                    {amount}
+                </span>
+
+                <img src='https://cdn-icons-png.flaticon.com/128/6861/6861362.png'
+                    alt='delete-transaction'
+                    onClick={deleteTransaction}
+                    className='transaction-card-delete' />
+
+
+                <Toaster />
+            </div>
+        </>
     )
 }
 

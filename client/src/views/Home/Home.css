@@ -1,16 +1,19 @@
 .greeting-container {
    background-color: #666633;
+   margin-bottom: 25px;
 }
 
 .home-heading {
    font-size: 30px;
-   margin: 15px 0;
+   margin: 10px 0;
+   margin-left: 10px;
 }
 
 .home-greeting {
    font-size: 40px;
-   margin: 0;
+   margin-left: 10px;
    color: #e5e5cd;
+   font-weight: lighter;
 }
 
 .home-logout {

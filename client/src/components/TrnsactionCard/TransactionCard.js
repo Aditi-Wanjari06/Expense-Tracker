@@ -36,12 +36,10 @@ function TransactionCard({ _id, title, amount, category, type, createdAt, loadTr
                 {amount}
             </span>
 
-            <button
-                type='button' className='transaction-card-delete'
-                onClick={deleteTransaction}
-            >
-                Delete
-            </button>
+            <img src='https://cdn-icons-png.flaticon.com/128/6861/6861362.png' 
+            alt='delete-transaction'
+            onClick={deleteTransaction}
+            className='transaction-card-delete' />
 
 
             <Toaster />

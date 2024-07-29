@@ -8,8 +8,8 @@
 }
 
 .transaction-card-title {
-    margin: 0;
-    font-size: 30px;
+    margin-left: 40px;
+    font-size: 27px;
 }
 
 .transaction-card-amount {
@@ -19,12 +19,13 @@
     font-size: 20px;
 }
 
-.transaction-card-date{
-    font-size: 10px;
+.transaction-card-date {
+    font-size: 15px;
+    margin-left: 40px;
 }
 
-.transaction-card-category{
-    font-size: 10px;
+.transaction-card-category {
+    font-size: 15px;
     position: absolute;
     right: 10px;
     bottom: 10px;
@@ -34,14 +35,36 @@
     color: white;
 }
 
-.transaction-card-delete{
-    background-color: black;
-    color: white;
-    font-size: 10px;
-    border: none;
-    padding: 2px 5px;
-    border-radius: 20px;
-    margin-left: 30px;
-    cursor: pointer;
-
+.transaction-card-delete {
+    height: 25px;
+    position: absolute;
+    left: 5px;
+    bottom: 27px;
 }
+
+
+@keyframes delete-animation {
+    0%{
+        transform: rotate(-25deg);
+    }
+    25%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(25deg);
+    }
+    75%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-25deg);
+    }
+}
+
+.transaction-card-delete:hover{
+    height: 25px;
+    animation: delete-animation;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+

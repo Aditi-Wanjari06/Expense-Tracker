@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./Home.css"
 import { useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
-import axios, { all } from 'axios'
+import axios from 'axios'
 import TransactionCard from '../../components/TrnsactionCard/TransactionCard.js'
 import imgAdd from "./add.png"
 import { Link } from 'react-router-dom'
@@ -67,8 +67,11 @@ function Home() {
 
   return (
     <div>
-      <h1 className='home-greeting'>Hello {user.fullName} </h1>
-      <h2 className='home-heading'>Welcome to the Expense Tracker</h2>
+    <div className = 'greeting-container'>
+      <h1 className='home-greeting'>Hello {user.fullName}!! </h1>
+      <h2 className='home-heading'>Welcome to the Expense Tracker.....</h2>
+      </div>
+
 
       <span className='home-logout'
         onClick={() => {

@@ -1,65 +1,77 @@
-.home-heading{
-    font-size: 20px;
-    margin: 0;
+.greeting-container {
+   background-color: #666633;
 }
 
-.home-greeting{
-    font-size: 40px;
-    margin: 0;
+.home-heading {
+   font-size: 30px;
+   margin: 15px 0;
 }
 
-.home-logout{
+.home-greeting {
+   font-size: 40px;
+   margin: 0;
+   color: #e5e5cd;
+}
+
+.home-logout {
    position: fixed;
    top: 10px;
    right: 10px;
    cursor: pointer;
-   font-size: 17px;
+   font-size: 20px;
+   color: white;
+   padding: 2px 10px;
+   border-radius: 15px;
+   background-color: #e5e5cc;
+   color: black;
 }
 
-.net-transactions-value{
-display: flex;
-justify-content: space-around;
-margin: 10px auto;
+.net-transactions-value {
+   display: flex;
+   justify-content: space-around;
+   margin: 10px auto;
 }
 
-.net-transactions-value-item{
-    width: 150px;
-    border: 1px solid black;
-    padding: 5px;
-    border-radius: 5px;
+.net-transactions-value-item {
+   width: 150px;
+   border: 3px double #666633;
+   padding: 10px;
+   border-radius: 10px;
+   font-size: 20px;
+   background-color: #e5e5cc;
 }
 
-.net-transactions-value-title{
-    display: block;
-    text-align: center;
+.net-transactions-value-title {
+   display: block;
+   text-align: center;
 }
 
-.net-transactions-value-amount{
+.net-transactions-value-amount {
    display: block;
    text-align: center;
    font-size: 20px;
    font-weight: bold;
 }
 
-.transactions-container{
-   max-height: 400px;
-   overflow-y: scroll; 
+.transactions-container {
+   max-height: 450px;
+   overflow-y: scroll;
 }
 
-.add-transaction{
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  height: 30px;
-  width: 30px;
+.add-transaction {
+   position: fixed;
+   bottom: 10px;
+   right: 10px;
+   height: 30px;
+   width: 30px;
    background-color: white;
    padding: 10px;
    border-radius: 50%;
    border: 2px double black;
    cursor: pointer;
 }
-   
-.add-transaction:hover{
+
+.add-transaction:hover {
    background-color: grey;
-    
+
 }

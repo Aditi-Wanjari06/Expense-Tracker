@@ -117,6 +117,8 @@ function Home() {
         </div>
       </div>
 
+      <h2 className='list-heading'>Expenses list : </h2>
+
       <div className='transactions-container'>
         {
           transactions.map((transaction, i) => {
@@ -142,6 +144,7 @@ function Home() {
             />)
           })
         }
+        
       </div>
 
       <Link to='/add-transaction' >

@@ -56,6 +56,14 @@
    font-weight: bold;
 }
 
+.list-heading{
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   margin-left: 32px;
+   margin-top: 20px;
+   font-size: 30px;
+   color: #55552b;
+}
+
 .transactions-container {
    max-height: 450px;
    overflow-y: scroll;
@@ -65,16 +73,28 @@
    position: fixed;
    bottom: 10px;
    right: 10px;
-   height: 30px;
-   width: 30px;
+   height: 50px;
+   width: 50px;
    background-color: white;
    padding: 10px;
    border-radius: 50%;
-   border: 2px double black;
+   border: 2px dotted black;
    cursor: pointer;
 }
 
-.add-transaction:hover {
-   background-color: grey;
+@keyframes add-transaction-animation {
+   0%{
+      transform: rotate(-360deg);
+   }
 
+   100%{
+      transform: rotate(360deg);
+   }
+}
+
+.add-transaction:hover {
+   background-color: #b0e37a;
+   animation: add-transaction-animation;
+   animation-duration: 3s;
+   animation-iteration-count: infinite;
 }

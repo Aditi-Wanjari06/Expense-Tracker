@@ -3,6 +3,8 @@ import "./Login.css"
 import { Link } from 'react-router-dom'
 import axios from "axios"
 import toast, {Toaster} from "react-hot-toast"
+import gmail from "./email.png"
+import lock from './hidden.png'
 
 function Login() {
 
@@ -36,6 +38,9 @@ function Login() {
       <h1 className='auth-heading'>User Login</h1>
 
       <form className='auth-form'>
+      <label>
+          <img src={gmail } alt='email' className='field-icon' />
+        </label>
         <input
           type='email'
           placeholder='Email'
@@ -44,6 +49,9 @@ function Login() {
           onChange={(e) => setEmail(e.target.value)}
         />
 
+<label>
+          <img src={lock} alt='password' className='field-icon' />
+        </label>
         <input
           type='password'
           placeholder='Password'

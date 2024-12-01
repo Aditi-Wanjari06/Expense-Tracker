@@ -1,0 +1,7 @@
+@media screen and (max-width:600px){
+    .auth-heading{
+        text-align: center;
+        font-size: 42px;
+        padding: 14px;
+    }
+}

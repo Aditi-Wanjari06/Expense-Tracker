@@ -68,3 +68,24 @@
     animation-iteration-count: infinite;
 }
 
+
+@media(max-width:450px){
+    .transaction-card-title{
+        font-size: 20px;
+        margin-left: 30px;
+    }
+    .transaction-card-date{
+        font-size: 10px;
+        margin-left: 30px;
+    }
+    .transaction-card-delete{
+        position: absolute;
+        left: 5px;
+        bottom: 22px;
+    }
+    .transaction-card-category{
+        position: absolute;
+        right: 6px;
+        bottom: 6px;
+    }
+}

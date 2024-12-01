@@ -1,6 +1,7 @@
 .greeting-container {
    background-color: #666633;
    margin-bottom: 25px;
+   padding: 8px;
 }
 
 .home-heading {
@@ -16,6 +17,8 @@
    font-weight: lighter;
 }
 
+
+
 .home-logout {
    position: fixed;
    top: 10px;
@@ -29,10 +32,26 @@
    color: black;
 }
 
+.logout-icon {
+   position: absolute;
+   right: 10px;
+   top: 10px;
+   display: none;
+
+}
+
+.logout-icon img {
+   height: 35px;
+}
+
+
 .net-transactions-value {
    display: flex;
    justify-content: space-around;
    margin: 10px auto;
+   flex-wrap: wrap;
+
+
 }
 
 .net-transactions-value-item {
@@ -42,6 +61,7 @@
    border-radius: 10px;
    font-size: 20px;
    background-color: #e5e5cc;
+
 }
 
 .net-transactions-value-title {
@@ -56,7 +76,7 @@
    font-weight: bold;
 }
 
-.list-heading{
+.list-heading {
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    margin-left: 32px;
    margin-top: 20px;
@@ -83,11 +103,11 @@
 }
 
 @keyframes add-transaction-animation {
-   0%{
+   0% {
       transform: rotate(-360deg);
    }
 
-   100%{
+   100% {
       transform: rotate(360deg);
    }
 }
@@ -97,4 +117,50 @@
    animation: add-transaction-animation;
    animation-duration: 3s;
    animation-iteration-count: infinite;
+}
+
+
+@media(max-width:450px) {
+   .home-logout {
+      display: none;
+   }
+
+   .home-greeting {
+      font-size: 30px;
+   }
+
+   .home-heading {
+      font-size: 25px;
+      
+   }
+
+   .logout-icon {
+      display: block;
+      
+   }
+
+   .net-transactions-value-item {
+      margin: 10px;
+      width: 200px;
+
+   }
+
+   .net-transactions-value {
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+   }
+
+   .list-heading {
+      font-size: 20px;
+   }
+
+   .add-transaction{
+      height: 35px;
+      width: 35px;
+   }
+
+
 }

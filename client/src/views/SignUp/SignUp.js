@@ -80,7 +80,7 @@ function SignUp() {
 
         <button
           type='button'
-          className='btn-auth'
+          className='btn-auth'  
           onClick={signup}>
           Register
         </button>

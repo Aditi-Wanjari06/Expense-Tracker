@@ -6,13 +6,14 @@ import axios from 'axios'
 import TransactionCard from '../../components/TrnsactionCard/TransactionCard.js'
 import imgAdd from "./add.png"
 import { Link } from 'react-router-dom'
+import logout from './logout.png'
 
 function Home() {
 
-  const [user, setUser] = useState('')
-  const [transactions, setTransactions] = useState([])
-  const [netIncome, setNetIncome] = useState(0)
-  const [netExpense, setNetExpense] = useState(0)
+  const [user, setUser] = useState('');
+  const [transactions, setTransactions] = useState([]);
+  const [netIncome, setNetIncome] = useState(0);
+  const [netExpense, setNetExpense] = useState(0);
 
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'))
@@ -32,16 +33,33 @@ function Home() {
       return
     }
 
-    toast.loading('Loading transactions')
+    
+  //   toast.loading('Loading transactions')
 
-    const response = await axios.get(`${process.env.REACT_APP_API_URL}/transactions?userId=${user._id}`)
+  //   const response = await axios.get(`${process.env.REACT_APP_API_URL}/transactions?userId=${user._id}`)
 
-    const allTransactions = response.data.data
+  //   const allTransactions = response.data.data
+    
+  //   toast.dismiss()
+  //   setTransactions(allTransactions)
+   
+  // }
 
-    toast.dismiss()
-
-    setTransactions(allTransactions)
+  try {
+    toast.loading('Loading transactions');
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/transactions?userId=${user._id}`);
+    const allTransactions = response?.data?.data || [];
+    setTransactions(allTransactions);
+    toast.dismiss();
+  } catch (error) {
+    console.error('Error loading transactions:', error);
+    toast.dismiss();
+    toast.error('Failed to load transactions');
   }
+};
+
+
+
 
   useEffect(() => {
     loadTransactions()
@@ -84,6 +102,12 @@ function Home() {
         }}>
         Logout
       </span>
+     
+      <span className='logout-icon'>
+      <img src={logout} alt='Logout' />
+      </span>
+
+
 
       <div className='net-transactions-value'>
         <div className='net-transactions-value-item'>
@@ -121,7 +145,7 @@ function Home() {
 
       <div className='transactions-container'>
         {
-          transactions.map((transaction, i) => {
+          transactions.map((transaction,i) => {
             const {
               _id,
               title,
@@ -130,9 +154,9 @@ function Home() {
               type,
               createdAt,
              
-            } = transaction
+            } = transaction;
 
-            return (<TransactionCard
+            return <TransactionCard
               key={_id}
               _id={_id}
               title={title}
@@ -141,7 +165,7 @@ function Home() {
               type={type}
               createdAt={createdAt}
               loadTransactions={loadTransactions}
-            />)
+            />
           })
         }
         
